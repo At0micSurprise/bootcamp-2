@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body ng-app="directoryApp">
+    <div class="container">
+      <div class="row">
+        <h1>UF Directory App</h1>
+      </div>
+      <div class="row" ng-controller="ListingsController">
+        <div class="col-md-6">
+            <h5><id = "firstText"><strong>{{displayFirst}}</strong></h5>
+          <div class="input-group" id="searchBar">
+              <button ng-click="searchThruList()">SEARCH</button>
+              <button ng-click="reset()">RESET</button>
+              <button ng-click="addListing()">add the building!</button>
+              <button ng-click="deleteListing()">delete a building!</button>
+
+            <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
+            <input type="text" class="form-control" placeholder="Search" ng-model="CPPisBetter">
+          </div>
+          <div>{{CPPisBetter}}</div>
+          <div style = "text-align: center">
+              <h3 id = "add"><strong> add a building </strong></h3>
+              </div>
+              <div>
+                  <span class="input-group-addon" id="sizing-addon1"></span>
+                  <input type="text" class="form-control" id = " box" placeholder="building name" ng-model="tempName">
+                  <span class="input-group-addon" id="sizing-addon1"></span>
+                  <input type="text" class="form-control" id = " box" placeholder="building code" ng-model="tempCode">
+                  <span class="input-group-addon" id="sizing-addon1"></span>
+                  <input type="text" class="form-control" id = " box" placeholder="latitude" ng-model="tempLat">
+                  <span class="input-group-addon" id="sizing-addon1"></span>
+                  <input type="text" class="form-control" id = " box" placeholder="longitude" ng-model="tempLong">
+                  <span class="input-group-addon" id="sizing-addon1"></span>
+                  <input type="text" class="form-control" id = " box" placeholder="address" ng-model="tempAddress"> 
+              </div>
+              <div style="text-align: center">
+                  <h3 id = "deleting"><strong> delete the building</strong></h3>
+                  </div>
+                  <div>
+                      <span class="input-group-addon" id="sizing-addon1"></span>
+                      <input type="text" class="form-control" placeholder="please type the building name to delete then hit the 'delete a building button'" ng-model="tempDeleting">
+                  </div>
+          <div></div>
+          <div style="text-align: center">
+              <h3 id = "list"><strong> listings below</strong></h3>
+              </div>
+          <div class="tableWrapper">
+            <table class="table table-hover" id="table">
+              <tr>
+                <th>Code</th>
+                <th>Building Name</th>
+                <tr ng-repeat="DOOM in alsoAList" ng-click="displayStuff(DOOM)">
+                    <td><role="button">{{DOOM.code}}</role></td>
+                    <td><role="button">{{DOOM.name}}</role></td>
+                </tr>
+                <!--<th></th>-->
+              </tr>
+
+            </table>
+          </div>
+          
+        </div>
+        <div class="col-md-6">
+          <div class="jumbotron" id="jumbo">
+            <h2>Detailed Information</h2>
+            <div><strong>code:</strong> {{stuffToDisplay.code}}</div>
+            <div><strong>name:</strong> {{stuffToDisplay.name}}</div>
+            <div><strong>latitude:</strong> {{stuffToDisplay.coordinates.latitude}}</div>
+            <div><strong>longitude:</strong> {{stuffToDisplay.coordinates.longitude}}</div>
+            <div><strong>address:</strong> {{stuffToDisplay.address}}</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="listingController.js"></script>
+    <script src="listingFactory.js"></script>
+  </body>
+</html>

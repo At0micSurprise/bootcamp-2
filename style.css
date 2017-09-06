@@ -1,0 +1,43 @@
+body {
+  background-color: purple;
+}
+h1 {
+  color: #0FD60F;
+}
+h2 {
+  color: #0FD60F;
+}
+h3 {
+  color: #0FD60F;
+}
+h4 {
+  color: #0FD60F;
+}
+h5 {
+  color: #0FD60F;
+}
+#jumbo{
+  background-color:purple;
+  color:#0FD60F;
+}
+#table{
+  color:#0FD60F;
+  background-color: purple;
+}
+#box{
+  color:#0FD60F;
+  background-color: purple;
+}
+#sizing-addon1{
+  color:#0FD60F;
+  background-color: purple;
+}
+#searchBar {
+  margin: 15px 10px;
+  /*background: orange;*/
+}
+
+.tableWrapper {
+  max-height: 400px;
+  overflow: auto;
+}
